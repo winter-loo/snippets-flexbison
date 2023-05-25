@@ -1,3 +1,12 @@
+%top {
+/*----------------------------
+ * I WILL BE PLACED AT THE TOP
+ * OF GENERATE C SOURCE FILE
+ *----------------------------
+ */
+int g_this_is_my_global_var = 10;
+
+}
 /* The first section ignored */
 
 /* The second section starts here */
