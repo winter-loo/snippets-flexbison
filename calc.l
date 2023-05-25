@@ -6,7 +6,7 @@
 
 "(" { return OP; }
 ")" { return CP; }
-"//".* { /* ignore comments */ }
+"//".* { return COMMENT; }
 "+" { return ADD; }
 "-" { return SUB; }
 "*" { return MUL; }

@@ -6,10 +6,12 @@
 %token ADD SUB MUL DIV ABS
 %token EOL
 %token OP CP
+%token COMMENT
 
 %%
 
 calclist: /* nothing */
+  | COMMENT EOL { }
   | calclist exp EOL { printf("= %d\n", $2); }
   ;
 
