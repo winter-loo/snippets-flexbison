@@ -4,6 +4,9 @@
 
 %%
 
+"(" { return OP; }
+")" { return CP; }
+"//".* { /* ignore comments */ }
 "+" { return ADD; }
 "-" { return SUB; }
 "*" { return MUL; }
