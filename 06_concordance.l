@@ -1,4 +1,12 @@
 %option noyywrap nodefault yylineno case-insensitive
+/*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ * case-insensitive
+ *
+ *   case insensitive only in pattern of a rule,
+ *   but `yytext` still gets the orginal raw string
+ *
+ /
+
 /* the symbol table */
 %{
 struct symbol { /* a word */
