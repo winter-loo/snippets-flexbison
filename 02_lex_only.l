@@ -29,6 +29,7 @@
 int main(int argc, char **argv) {
   int tok;
 
+  /* yylex waits value returned from rule action */
   while (tok = yylex()) {
     printf("%d", tok);
     if (tok == NUMBER) printf(" = %d\n", yylval);

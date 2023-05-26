@@ -1,8 +1,14 @@
 fstring
-fstring.c
+04_fstring.c
 foo
 calc
 a.out
 lex.yy.c
 *.tab.c
 *.tab.h
+foo/
+foo
+bar
+bar/
+foobar
+foobar/

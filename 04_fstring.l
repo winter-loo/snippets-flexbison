@@ -8,7 +8,7 @@
 %{
 #include <string.h>
 %}
-%option outfile="fstring.c"
+%option outfile="04_fstring.c"
 
 /* define state identifiers */
 %x fstr
