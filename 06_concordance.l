@@ -23,7 +23,7 @@ void printrefs();
 
 %%
 
-[^a-z]{0,1}[a-z]{1,1}[^a-z]{1,1} {
+[^a-z]{0,1}[a-z]{1}[^a-z]{1} {
   /* printf("ignore single char: |%s|\n", yytext); */ /* unput(yytext[2]); */ }
 
 an |
