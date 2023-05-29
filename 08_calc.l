@@ -5,7 +5,9 @@
 #include "08_calc.tab.h"
 
 struct symbol symtab[NHASH];
+
 %}
+%option noyywrap nodefault yylineno case-insensitive
 
 EXP ([Ee]?[+-]?[0-9]+)
 

@@ -89,7 +89,7 @@ calclist: /* nothing */
       printf("= %4.4g\n> ", eval($2));
       treefree($2);
     }
-  | calclist FN NAME '(' symlist ')' '=' stmt EOL {
+  | calclist FN NAME '(' symlist ')' '=' list EOL {
       dodef($3, $5, $8);
       printf("Defined %s\n> ", $3->name);
     }

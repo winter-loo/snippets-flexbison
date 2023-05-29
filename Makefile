@@ -1,5 +1,5 @@
 calc3: 08_calc.l 08_calc.y 08_calc.h
-	bison -d -t 08_calc.y
+	bison -v -d -t 08_calc.y
 	flex 08_calc.l
 	cc -g -o $@ 08_calc.tab.c lex.yy.c 08_calc.c -lfl -lm
 
