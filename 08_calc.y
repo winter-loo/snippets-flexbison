@@ -4,7 +4,7 @@
 #include "08_calc.h"
 
 int yylex();
-#define YYDEBUG 0
+#define YYDEBUG 1
 int yydebug = 1;
 %}
 
