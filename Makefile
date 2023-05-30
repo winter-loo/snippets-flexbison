@@ -42,7 +42,12 @@ hello: 01_hello.l
 	flex $<
 	cc -o $@ lex.yy.c -lfl
 
+foo: foo.l foo.y
+	flex -o foo.lex.c $<
+	bison -d foo.y
+	cc -o $@ foo.tab.c foo.lex.c -lfl
+
 clean:
 	@rm -rf lexonly cal calc lex.yy.c *.tab.c *.tab.h hello \
 		fstring 04_fstring.c wc1 wc2 concordance calc2 \
-		07_calc.lex.c foo calc3
+		07_calc.lex.c foo calc3 foo.lex.c
