@@ -5,7 +5,7 @@
 int yylex();
 %}
 
-/* declre types for all symbols */
+/* declare types for all symbols */
 %union {
   struct ast *a;
   double d;

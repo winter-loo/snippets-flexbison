@@ -6,6 +6,8 @@
 
 flex manuaul: `info flex`
 
+**bison performs bottom-up/shift-reduce option while scanning input**
+
 # debug
 
 add
