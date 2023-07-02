@@ -1,6 +1,8 @@
 %top{
   /* --------------------------------
    * define python f-string syntax
+   *
+   * demostrates 'start condition' in flex
    * --------------------------------
    */
 }
