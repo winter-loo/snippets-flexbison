@@ -7,25 +7,18 @@ int yyerror(char*);
 
 /* show parsing process */
 #define YYDEBUG 1
-int yydebug = 0;
+int yydebug = 1;
 
 %}
 
-%token IF THEN ELSE NUMBER EOL
+%token IF THEN NUMBER EOL
 
 /* Define the precedence of IF, THEN, and ELSE */
 /*
- * - The IF token has a higher precedence (IFX) than THEN and ELSE.
- *   This means that the IF statement and its associated expressions
- *   will be treated as a single unit.
- *
- * - The THEN token is left-associative, and so is the ELSE token.
- *   This ensures that THEN and ELSE bindings are resolved correctly
- *   in nested IF statements.
-
  * More information on precedence and associativity can be found here:
  * https://www.gnu.org/software/bison/manual/bison.html#Precedence
  */
+/* precedence: lowest to highest */
 %nonassoc IFX
 %left THEN
 %left ELSE
@@ -44,7 +37,14 @@ expr :
 
 int main()
 {
-    /* if 1 then if 2 then if 3 then 4 else 5 else 6 else 7 */
+    /* Two ways to interpret the following expression:
+     * if 1 then (if 2 then 3 else 4)
+     * if 1 then (if 2 then 3) else 4
+     *
+     * When the parser encounters ELSE token, as the ELSE has a higher precedence
+     * then the production rule `IF expr THEN expr ELSE expr`, so the parser
+     * will shift the ELSE token and reduce the production rule.
+     */
     yyparse();
     return 0;
 }
