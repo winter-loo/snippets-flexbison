@@ -1,3 +1,8 @@
+pred: pred.l pred.y
+	bison -d -t pred.y
+	flex -o pred.lex.c pred.l
+	cc -o $@ pred.tab.c pred.lex.c -lfl
+
 calc3: 08_calc.l 08_calc.y 08_calc.h
 	bison -v -d 08_calc.y
 	flex 08_calc.l
@@ -50,4 +55,4 @@ foo: foo.l foo.y
 clean:
 	@rm -rf lexonly cal calc lex.yy.c *.tab.c *.tab.h hello \
 		fstring 04_fstring.c wc1 wc2 concordance calc2 \
-		07_calc.lex.c foo calc3 foo.lex.c
+		07_calc.lex.c foo calc3 foo.lex.c pred *.lex.c
