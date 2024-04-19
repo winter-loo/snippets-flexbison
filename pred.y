@@ -17,7 +17,7 @@ int yydebug = 1;
 /*
  * More information on precedence and associativity can be found here:
  * https://www.gnu.org/software/bison/manual/bison.html#Precedence
- * See 5.3.3 Specifying Precedence Only
+ * See 5.3.3 Specifying Precedence Only and 5.3.5 How Precedence Works
  */
 /* precedence: lowest to highest */
 %precedence THEN
