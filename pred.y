@@ -11,25 +11,25 @@ int yydebug = 1;
 
 %}
 
-%token IF THEN NUMBER EOL
+%token IF THEN ELSE NUMBER EOL
 
 /* Define the precedence of IF, THEN, and ELSE */
 /*
  * More information on precedence and associativity can be found here:
  * https://www.gnu.org/software/bison/manual/bison.html#Precedence
+ * See 5.3.3 Specifying Precedence Only
  */
 /* precedence: lowest to highest */
-%nonassoc IFX
-%left THEN
-%left ELSE
+%precedence THEN
+%precedence ELSE
 
 %%
 
 line_expr: expr EOL ;
 
 expr : 
-     IF expr THEN expr ELSE expr %prec IFX
-     | IF expr THEN expr
+     IF expr THEN expr ELSE expr
+     | IF expr THEN expr /* precedence is by default that of its last token (THEN) */
      | NUMBER
      ;
 
