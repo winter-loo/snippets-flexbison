@@ -1,5 +1,7 @@
 # references:
 
+  * https://www.gnu.org/software/bison/manual/bison.html
+
   * https://web.iitd.ac.in/~sumeet/flex__bison.pdf
 
     This book has some errors in it. Be careful!
