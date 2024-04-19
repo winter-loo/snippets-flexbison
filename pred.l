@@ -11,8 +11,6 @@
 
 "then" { return THEN; }
 
-" " { /* ignore */ ; }
-
 [0-9]+ { yylval = atoi(yytext); return NUMBER; }
 
 \n { return EOL; }

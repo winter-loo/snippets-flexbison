@@ -25,7 +25,7 @@ int yydebug = 1;
 
 %%
 
-line_expr: expr EOL ;
+line_expr: EOL | line_expr EOL | expr EOL | line_expr expr EOL;
 
 expr : 
      IF expr THEN expr ELSE expr
